@@ -593,6 +593,7 @@ export const DefaultSvgDefs: () => null;
 // @public (undocumented)
 export const defaultUserPreferences: Readonly<{
     animationSpeed: 0 | 1;
+    canvasColor: "#ffffff";
     color: "#02B1CC" | "#11B3A3" | "#39B178" | "#55B467" | "#7B66DC" | "#9D5BD2" | "#BD54C6" | "#E34BA9" | "#EC5E41" | "#F04F88" | "#F2555A" | "#FF802B";
     edgeScrollSpeed: 1;
     isDarkMode: false;
@@ -2717,6 +2718,8 @@ export type TLTickEvent = (info: TLTickEventInfo) => void;
 export interface TLUserPreferences {
     // (undocumented)
     animationSpeed?: null | number;
+    // (undocumented)
+    canvasColor?: null | string;
     // (undocumented)
     color?: null | string;
     // (undocumented)

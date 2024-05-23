@@ -28,13 +28,20 @@ export class UserPreferencesManager {
 			isSnapMode: this.getIsSnapMode(),
 			isDarkMode: this.getIsDarkMode(),
 			isWrapMode: this.getIsWrapMode(),
+			canvasColor: this.getCanvasColor(),
 		}
 	}
+	// get dark mode context
 	@computed getIsDarkMode() {
 		return (
 			this.user.userPreferences.get().isDarkMode ??
 			(this.inferDarkMode ? userPrefersDarkUI() : false)
 		)
+	}
+
+	@computed getCanvasColor() {
+		// todo: we may need to deal with default dark, and default light colors.
+		return this.user.userPreferences.get().canvasColor
 	}
 
 	/**

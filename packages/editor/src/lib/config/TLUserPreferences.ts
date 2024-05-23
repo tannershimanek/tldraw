@@ -21,6 +21,7 @@ export interface TLUserPreferences {
 	isDarkMode?: boolean | null
 	isSnapMode?: boolean | null
 	isWrapMode?: boolean | null
+	canvasColor?: string | null
 }
 
 interface UserDataSnapshot {
@@ -44,6 +45,7 @@ const userTypeValidator: T.Validator<TLUserPreferences> = T.object<TLUserPrefere
 	edgeScrollSpeed: T.number.nullable().optional(),
 	isSnapMode: T.boolean.nullable().optional(),
 	isWrapMode: T.boolean.nullable().optional(),
+	canvasColor: T.string.nullable().optional(),
 })
 
 const Versions = {
@@ -123,6 +125,7 @@ export const defaultUserPreferences = Object.freeze({
 	animationSpeed: userPrefersReducedMotion() ? 0 : 1,
 	isSnapMode: false,
 	isWrapMode: false,
+	canvasColor: '#ffffff',
 }) satisfies Readonly<Omit<TLUserPreferences, 'id'>>
 
 /** @public */
