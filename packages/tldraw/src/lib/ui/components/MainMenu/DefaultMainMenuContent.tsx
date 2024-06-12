@@ -1,6 +1,7 @@
 import { useEditor, useValue } from '@tldraw/editor'
 import { useActions } from '../../context/actions'
 import { useCanRedo, useCanUndo } from '../../hooks/menu-hooks'
+import { CanvasColorMenu } from '../CanvasColorMenu/DefaultCanvasColorMenu'
 import { LanguageMenu } from '../LanguageMenu'
 import {
 	ClipboardMenuGroup,
@@ -12,6 +13,7 @@ import {
 	GroupMenuItem,
 	RemoveFrameMenuItem,
 	SelectAllMenuItem,
+	// SetCanvasColor,
 	ToggleAutoSizeMenuItem,
 	ToggleDarkModeItem,
 	ToggleDebugModeItem,
@@ -172,6 +174,9 @@ export function PreferencesGroup() {
 					<ToggleEdgeScrollingItem />
 					<ToggleReduceMotionItem />
 					<ToggleDebugModeItem />
+				</TldrawUiMenuGroup>
+				<TldrawUiMenuGroup id="canvas-color">
+					<CanvasColorMenu />
 				</TldrawUiMenuGroup>
 				<TldrawUiMenuGroup id="language">
 					<LanguageMenu />
